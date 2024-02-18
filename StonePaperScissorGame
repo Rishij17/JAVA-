@@ -1,7 +1,7 @@
-package OWN;
+package JavaClasses;
 import java.util.Random;
 import java.util.Scanner;
-public class stonepaperscissor {
+class Game{
 	int Input;
 	int number;
 	void generator(){
@@ -35,48 +35,51 @@ public class stonepaperscissor {
 			System.out.println("BOT gets 1 point");
 		}
 		return 0;
-	}
-		public static void main(String[] args) {
-			stonepaperscissor obj= new stonepaperscissor();
-			int n,choice=5;
-			int c;
-			Scanner sc = new Scanner(System.in);
-			while(choice==5) {
-				int BOT=0,USER = 0;
-				System.out.println("Enter no. turns you want to play : ");
-				n = sc.nextInt();
-				while(n>0) {
-					System.out.println(" Press 1 for scissor ");
-					System.out.println(" Press 2 for paper ");
-					System.out.println(" Press 3 for stone ");
-					System.out.println(" Enter your choice ");
-					obj.generator();
-					obj.takeUserInput();
-					c = obj.conditionsetter();	
-					if(c==1) {
-						USER++;
-					}
-					else if(c==0) {
-						BOT++;
-					}
-					else if(c==2) {
-						BOT++;
-						USER++;
-					}
-					n--;
+}
+
+}
+public class SPSG {
+	public static void main(String[] args) {
+		Game obj= new Game();
+		int n,choice=5;
+		int c;
+		Scanner sc = new Scanner(System.in);
+		while(choice==5) {
+			int BOT=0,USER = 0;
+			System.out.println("Enter no. turns you want to play : ");
+			n = sc.nextInt();
+			while(n>0) {
+				System.out.println(" Press 1 for scissor ");
+				System.out.println(" Press 2 for paper ");
+				System.out.println(" Press 3 for stone ");
+				System.out.println(" Enter your choice ");
+				obj.generator();
+				obj.takeUserInput();
+				c = obj.conditionsetter();	
+				if(c==1) {
+					USER++;
 				}
-				System.out.println("SCORE : " +"BOT = "+BOT +" USER = "+ USER);
-				if(USER > BOT) {
-					System.out.println("YOU WON");
+				else if(c==0) {
+					BOT++;
 				}
-				else if(USER == BOT) {
-					System.out.println("MATCH DRAW");
+				else if(c==2) {
+					BOT++;
+					USER++;
 				}
-				else {
-					System.out.println("YOU LOST, Better Luck Next Time");
-				}	
-				System.out.println("Press 5 to Continue");
-			    choice = sc.nextInt();   
+				n--;
 			}
+			System.out.println("SCORE : " +"BOT = "+BOT +" USER = "+ USER);
+			if(USER > BOT) {
+				System.out.println("YOU WON");
+			}
+			else if(USER == BOT) {
+				System.out.println("MATCH DRAW");
+			}
+			else {
+				System.out.println("YOU LOST, Better Luck Next Time");
+			}	
+			System.out.println("Press 5 to Continue");
+		    choice = sc.nextInt();   
 		}
 	}
+}
