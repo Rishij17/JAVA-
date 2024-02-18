@@ -4,9 +4,6 @@ import java.util.Scanner;
 public class stonepaperscissor {
 	int Input;
 	int number;
-	//scissor 1
-	//paper2
-	//stone 3
 	void generator(){
 		Random r = new Random();
 		this.number = r.nextInt(1,3);
